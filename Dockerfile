@@ -1,4 +1,4 @@
-FROM Python 3.8.2
+FROM python:3.9.5
 
 ADD requirements.txt /requirements.txt
 
@@ -6,7 +6,7 @@ ADD main.py /main.py
 
 ADD okteto-stack.yaml /okteto-stack.yaml
 
-ADD Dockerfile.txt /Dockerfile.txt
+ADD Dockerfile /Dockerfile
 
 RUN pip install -r requirements.txt
 
