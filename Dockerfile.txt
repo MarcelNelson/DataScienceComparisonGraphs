@@ -6,7 +6,7 @@ ADD main.py /main.py
 
 ADD okteto-stack.yaml /okteto-stack.yaml
 
-ADD Dockerfile /Dockerfile
+ADD Dockerfile.txt /Dockerfile.txt
 
 RUN pip install -r requirements.txt
 
