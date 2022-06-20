@@ -4,5 +4,5 @@ app = FastAPI()
 
 @app.get("/")
 def welcome():
-  x = {"message": "Warriors will beat the celtics tonight"}
+  x = {"message": "Warriors did win"}
   return x
