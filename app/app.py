@@ -112,6 +112,14 @@ async def welcome(request: Request, db: Session=Depends(get_db)):
   size10=fig_size.to_html(full_html=False, include_plotlyjs='cdn')
 
 
+  figtotal = px.histogram(df, x="Salary_usd")
+  figtotal.update_layout(yaxis=dict(tickfont=dict(size=5)),
+  xaxis = dict(tickfont = dict(size=5)),
+  font=dict(size=5),
+  margin=dict(l=0, r=0, t=0, b=0))
+  total=fig_total.to_html(full_html=False, include_plotlyjs='cdn')
+
+
 
   #dfteam=df.groupby('Team')['Salary'].sum()
   #dfteam=dfteam.reset_index()
@@ -161,4 +169,4 @@ async def welcome(request: Request, db: Session=Depends(get_db)):
 
 
 
-  return templates.TemplateResponse("chart.html", {"request": request, "exp10": exp10, "location10": location10, "pospie": pospie, "figyear": figyear, "figly": figly, "size10": size10})
+  return templates.TemplateResponse("chart.html", {"request": request, "exp10": exp10, "location10": location10, "pospie": pospie, "figyear": figyear, "total": total, "size10": size10})
