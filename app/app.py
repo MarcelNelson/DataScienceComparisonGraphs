@@ -169,4 +169,6 @@ async def welcome(request: Request, db: Session=Depends(get_db)):
 
 
 
+
   return templates.TemplateResponse("chart.html", {"request": request, "exp10": exp10, "location10": location10, "pospie": pospie, "figyear": figyear, "total": total, "size10": size10})
+  
