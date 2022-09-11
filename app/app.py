@@ -117,7 +117,7 @@ async def welcome(request: Request, db: Session=Depends(get_db)):
   xaxis = dict(tickfont = dict(size=5)),
   font=dict(size=5),
   margin=dict(l=0, r=0, t=0, b=0))
-  total=fig_total.to_html(full_html=False, include_plotlyjs='cdn')
+  total=figtotal.to_html(full_html=False, include_plotlyjs='cdn')
 
 
 
@@ -171,4 +171,3 @@ async def welcome(request: Request, db: Session=Depends(get_db)):
 
 
   return templates.TemplateResponse("chart.html", {"request": request, "exp10": exp10, "location10": location10, "pospie": pospie, "figyear": figyear, "total": total, "size10": size10})
-  
